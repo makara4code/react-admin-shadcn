@@ -4,6 +4,8 @@ import react from "@vitejs/plugin-react-swc";
 import { resolve } from "path";
 
 export default defineConfig({
+  base: "/",
+  define: { 'process.env': {}, },
   plugins: [react()],
   resolve: {
     alias: {

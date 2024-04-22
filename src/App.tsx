@@ -1,10 +1,10 @@
 import AppProvider from "./providers";
-import AppRouter from "./routes";
+import Router from "@/routes";
 
 function App() {
   return (
     <AppProvider>
-      <AppRouter />
+      <Router />
     </AppProvider>
   );
 }

@@ -1,9 +1,11 @@
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 
-import { BrowserRouter } from "react-router-dom";
+import { BASE_PATH } from "@/constants";
 import { Button } from "@/components/ui/button";
+import RouterProvider from "./route-provider";
 import { Suspense } from "react";
 import ThemeProvider from "./theme-provider";
+import { createBrowserHistory } from "history";
 import { useRouter } from "@/hooks/routes";
 
 const ErrorFallback = ({ error }: FallbackProps) => {
@@ -29,13 +31,15 @@ export default function AppProvider({
 }: {
   children: React.ReactNode;
 }) {
+  const history = createBrowserHistory();
+
   return (
     <Suspense>
-      <BrowserRouter basename="">
+      <RouterProvider basename={BASE_PATH} history={history}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <ThemeProvider>{children}</ThemeProvider>
         </ErrorBoundary>
-      </BrowserRouter>
+      </RouterProvider>
     </Suspense>
   );
 }

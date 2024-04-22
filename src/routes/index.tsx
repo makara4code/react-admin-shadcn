@@ -1,4 +1,11 @@
-import { Navigate, Outlet, useRoutes } from "react-router-dom";
+import {
+  Navigate,
+  Outlet,
+  RouterProvider,
+  createBrowserRouter,
+  useRouteError,
+  useRoutes,
+} from "react-router-dom";
 
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import DashboardPage from "@/pages/dashboard";
@@ -32,15 +39,14 @@ export default function AppRouter() {
 
   const publicRoutes = [
     {
-      path: '/404',
-      element: <NotFound />
+      path: "/404",
+      element: <NotFound />,
     },
     {
-      path: '*',
-      element: <Navigate to="/404" replace />
-    }
+      path: "*",
+      element: <Navigate to="/404" replace />,
+    },
   ];
 
-  const routes = useRoutes([...privateRoutes, ...publicRoutes]);
-  return routes;
+  return useRoutes([...publicRoutes, ...privateRoutes]);
 }
