@@ -3,8 +3,8 @@ import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import { BrowserRouter } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Suspense } from "react";
-import { useRouter } from "@/hooks/routes";
 import ThemeProvider from "./theme-provider";
+import { useRouter } from "@/hooks/routes";
 
 const ErrorFallback = ({ error }: FallbackProps) => {
   const router = useRouter();
@@ -31,7 +31,7 @@ export default function AppProvider({
 }) {
   return (
     <Suspense>
-      <BrowserRouter>
+      <BrowserRouter basename="">
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <ThemeProvider>{children}</ThemeProvider>
         </ErrorBoundary>
