@@ -13,13 +13,13 @@ export function Sidebar({ className }: SidebarProps) {
 
   return (
     <div className={cn("pb-12", className)}>
-      <div className="space-y-4 py-4">
+      <div className="py-4 space-y-4">
         <div className="px-3 py-2">
           <div className="space-y-1">
             <Link to="/">
               <Button
                 variant={`${pathname === "/" ? "secondary" : "ghost"}`}
-                className="w-full justify-start">
+                className="justify-start w-full">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -28,7 +28,7 @@ export function Sidebar({ className }: SidebarProps) {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="mr-2 h-4 w-4">
+                  className="w-4 h-4 mr-2">
                   <rect width="7" height="7" x="3" y="3" rx="1" />
                   <rect width="7" height="7" x="14" y="3" rx="1" />
                   <rect width="7" height="7" x="14" y="14" rx="1" />
@@ -40,7 +40,7 @@ export function Sidebar({ className }: SidebarProps) {
             <Link to="/users">
               <Button
                 variant={`${pathname === "/users" ? "secondary" : "ghost"}`}
-                className="w-full justify-start">
+                className="justify-start w-full">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -49,7 +49,7 @@ export function Sidebar({ className }: SidebarProps) {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="mr-2 h-4 w-4">
+                  className="w-4 h-4 mr-2">
                   <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                   <circle cx="12" cy="7" r="4" />
                 </svg>
