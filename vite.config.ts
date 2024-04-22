@@ -5,7 +5,7 @@ import { resolve } from "path";
 
 export default defineConfig({
   base: "/",
-  define: { 'process.env': {}, },
+  define: { "process.env": {} },
   plugins: [react()],
   resolve: {
     alias: {

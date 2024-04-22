@@ -1,11 +1,4 @@
-import {
-  Navigate,
-  Outlet,
-  RouterProvider,
-  createBrowserRouter,
-  useRouteError,
-  useRoutes,
-} from "react-router-dom";
+import { Navigate, Outlet, useRoutes } from "react-router-dom";
 
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import DashboardPage from "@/pages/dashboard";
