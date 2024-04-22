@@ -17,7 +17,7 @@ import {
 
 export function Menu() {
   return (
-    <Menubar className="rounded-none border-b border-none px-2 lg:px-4">
+    <Menubar className="border-b border-none rounded-none">
       <MenubarMenu>
         <MenubarTrigger className="font-bold">Music</MenubarTrigger>
         <MenubarContent>
@@ -135,7 +135,7 @@ export function Menu() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                className="h-4 w-4"
+                className="w-4 h-4"
                 viewBox="0 0 24 24">
                 <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
                 <circle cx="17" cy="7" r="5" />
@@ -152,7 +152,7 @@ export function Menu() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                className="h-4 w-4"
+                className="w-4 h-4"
                 viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />

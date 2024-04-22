@@ -4,15 +4,16 @@ import { BrowserRouter } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Suspense } from "react";
 import { useRouter } from "@/hooks/routes";
+import ThemeProvider from "./theme-provider";
 
 const ErrorFallback = ({ error }: FallbackProps) => {
   const router = useRouter();
   return (
     <div
-      className="flex h-screen w-screen flex-col items-center  justify-center text-red-500"
+      className="flex flex-col items-center justify-center w-screen h-screen text-red-500"
       role="alert">
       <h2 className="text-2xl font-semibold">
-        Ooops, something went wrong :({" "})
+        Ooops, something went wrong :( )
       </h2>
       <pre className="text-2xl font-bold">{error.message}</pre>
       <pre>{error.stack}</pre>
@@ -32,7 +33,7 @@ export default function AppProvider({
     <Suspense>
       <BrowserRouter>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          {children}
+          <ThemeProvider>{children}</ThemeProvider>
         </ErrorBoundary>
       </BrowserRouter>
     </Suspense>

@@ -1,7 +1,8 @@
-import { Outlet, useRoutes } from "react-router-dom";
+import { Navigate, Outlet, useRoutes } from "react-router-dom";
 
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import DashboardPage from "@/pages/dashboard";
+import NotFound from "@/components/shared/NotFound";
 import { Suspense } from "react";
 import UserPage from "@/pages/users";
 
@@ -29,6 +30,17 @@ export default function AppRouter() {
     },
   ];
 
-  const routes = useRoutes([...privateRoutes]);
+  const publicRoutes = [
+    {
+      path: '/404',
+      element: <NotFound />
+    },
+    {
+      path: '*',
+      element: <Navigate to="/404" replace />
+    }
+  ];
+
+  const routes = useRoutes([...privateRoutes, ...publicRoutes]);
   return routes;
 }
